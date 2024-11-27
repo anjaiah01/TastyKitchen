@@ -1,0 +1,90 @@
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+  }
+  .logo-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .navigations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-heading {
+    font-family: DM Sans;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    color: rgba(247, 147, 30, 1);
+    margin-left: 15px;
+  }
+  
+  .home {
+    margin-right: 15px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .cart {
+    margin-right: 15px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .logout {
+    margin-right: 15px;
+    padding: 8px 16px 8px 16px;
+    gap: 8px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #f7931e;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  .header-cart-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .cart-icon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35px; /* Increased size for better visibility */
+    width: 35px; /* Increased size for better visibility */
+    box-sizing: border-box;
+    overflow: hidden; /* Ensures child elements cannot overflow */
+    cursor: pointer;
+  }
+  .cart-icon {
+    font-size: 20px;
+  }
+  
+  .count-foods {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #f7931e;
+    color: white;
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+  

@@ -1,0 +1,41 @@
+.footer-container {
+    max-width: 100vw;
+    height: 424px;
+    top: 1268px;
+    gap: 0px;
+    opacity: 0px;
+    background-color: #0f172a;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .tasty-kitchens {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-heading {
+    margin-left: 10px;
+  }
+  .icons-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .footer-icon {
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+  }
+  

@@ -1,0 +1,59 @@
+li {
+    list-style-type: none;
+  }
+  .card-container {
+    height: 100px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+    cursor: pointer;
+  }
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+  .rating-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .star-icon {
+    color: #ffcc00;
+  }
+  .rating-number {
+    margin-left: 4px;
+    margin-right: 4px;
+    color: #0f172a;
+  }
+  .total-ratings {
+    color: #64748b;
+  }
+  .card-image {
+    width: 160px;
+    height: 100px;
+    border-radius: 8px;
+  }
+  .card-name {
+    font-family: DM Sans;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+  }
+  .card-cuisine {
+    font-family: DM Sans;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    line-height: 0.5rem;
+    color: #64748b;
+  }
+  

@@ -1,0 +1,24 @@
+.inputfeild {
+    background-color: #e2e8f0;
+    padding: 12px;
+    border: none;
+    border-width: 0px;
+    margin-top: 5px;
+    outline: none;
+    width: 312px;
+    height: 40px;
+    top: 24px;
+    gap: 0px;
+    border-radius: 2px;
+    opacity: 0px;
+  }
+  .label-text {
+    color: #475569;
+    font-family: DM Sans;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    text-align: left;
+  }
+  
