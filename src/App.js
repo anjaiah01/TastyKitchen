@@ -1,15 +1,16 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { Route, Routes } from 'react-router-dom';
 import { Component } from 'react';
 import LoginForm from './components/LoginForm';
 import Header from './components/Header/header';
 import Home from './components/Home/home';
-import Slides from './components/Slides/frames';
-import AllRestaurants from './components/AllRestaurants/pagination';
+import AllRestaurants from './components/AllRestaurants/allrestaurants';
 import Cart from './components/Cart/cart';
 import ProtectedRoute from './components/ProtectedRoute';
 import Restaurant from './components/RestaurantDetails/restaurant';
 import CartContext from './context/CartContext';
+import Profile from './components/Profile/profile';
 
 class App extends Component {
   state = {
@@ -28,7 +29,7 @@ class App extends Component {
     }));
   };
 
-  decreamentCartQuantity = (id) => {
+  decrementCartItemQuantity = (id) => {
     const { cartList } = this.state;
     const productObject = cartList.find((eachCartItem) => eachCartItem.id === id);
     if (productObject.quantity > 1) {
@@ -81,17 +82,47 @@ class App extends Component {
           addCartItem: this.addCartItem,
           removeCartItem: this.removeCartItem,
           incrementCartItemQuantity: this.incrementCartItemQuantity,
-          decrementCartItemQuantity: this.decrementCartQuantity,
+          decrementCartItemQuantity: this.decrementCartItemQuantity,
         }}
       >
-        <Router>
-          <Routes>
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
-            <Route path="/restaurant/:id" element={<ProtectedRoute><Restaurant /></ProtectedRoute>} />
-            <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
-          </Routes>
-        </Router>
+        <Routes>
+          {/* Public Route */}
+          <Route path="/login" element={<LoginForm />} />
+
+          {/* Protected Routes */}
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/restaurant/:id"
+            element={
+              <ProtectedRoute>
+                <Restaurant />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
       </CartContext.Provider>
     );
   }

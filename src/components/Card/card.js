@@ -1,19 +1,19 @@
-import './card.css';
-import { FaStar } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import './card.css'
+import {FaStar} from 'react-icons/fa'
+import {useHistory} from 'react-router-dom'
 
-const Card = (props) => {
-  const navigate = useNavigate();
+const Card = props => {
+  const navigate = useHistory()
 
-  const { RestaurantCard } = props;
-  const { name, cuisine, id, imageUrl, rating, totalRatings } = RestaurantCard;
+  const {RestaurantCard} = props
+  const {name, cuisine, id, imageUrl, rating, totalRatings} = RestaurantCard
 
-  const onClickRestaurant = () => {
-    navigate(`/restaurant/${id}`);
-  };
+  const onClickRestaraunt = () => {
+    navigate.push(`/restaurant/${id}`)
+  }
 
   return (
-    <li className="card-container" onClick={onClickRestaurant}>
+    <li className="card-container" onClick={onClickRestaraunt}>
       <div className="image-container">
         <img src={imageUrl} alt="Restaurant" className="card-image" />
       </div>
@@ -31,7 +31,6 @@ const Card = (props) => {
         </div>
       </div>
     </li>
-  );
-};
-
-export default Card;
+  )
+}
+export default Card

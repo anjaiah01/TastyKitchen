@@ -1,14 +1,14 @@
-import { Navigate, Outlet } from 'react-router-dom';
-import Cookie from 'js-cookie';
+import { Navigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
-const ProtectedRoute = () => {
-  const token = Cookie.get('jwt_token');
+const ProtectedRoute = ({ children }) => {
+  const token = Cookies.get('jwt_token');
 
   if (!token) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/login" />;
   }
 
-  return <Outlet />;
+  return children;
 };
 
 export default ProtectedRoute;

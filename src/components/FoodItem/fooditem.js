@@ -11,7 +11,7 @@ const FoodItem = props => {
     cartList,
     addCartItem,
     removeCartItem,
-    decreamentCartQuantity,
+    decrementCartItemQuantity,
     incrementCartItemQuantity,
   } = useContext(CartContext)
   const [isFirst, setIsFirst] = useState(true)
@@ -40,7 +40,7 @@ const FoodItem = props => {
   const onDecreament = () => {
     if (foodCount > 1) {
       setfoodCount(foodCount - 1)
-      decreamentCartQuantity(id)
+      decrementCartItemQuantity(id)
     } else {
     }
   }

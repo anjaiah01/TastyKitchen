@@ -16,7 +16,6 @@ const CartItem = props => (
       const onClickIncrement = () => incrementCartItemQuantity(id)
       const onRemoveCartItem = () => removeCartItem(id)
       const totalPrice = cost * quantity
-
       return (
         <li className="cart-item">
           <div className="cart-food">

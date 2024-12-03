@@ -1,46 +1,45 @@
-import './index.css';
-import Cookies from 'js-cookie';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import InputFeild from '../UI/input';
-import Wrapper from '../Wrapper/auth';
+import './index.css'
+import Cookies from 'js-cookie'
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import InputFeild from '../UI/input'
+import Wrapper from '../Wrapper/auth'
 
 const LoginForm = () => {
-  const [userName, setUserName] = useState('');
-  const [userPassword, setPassword] = useState('');
-  const [errorMsg, setErrorMsg] = useState('');
-  const navigate = useNavigate();
+  const [userName, setUserName] = useState('')
+  const [userPassword, setPassword] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
+  const history = useNavigate()
 
   const OnSubmit = async e => {
-    e.preventDefault();
+    e.preventDefault()
 
     const userDetails = {
       username: userName,
       password: userPassword,
-    };
-    console.log(userDetails);
+    }
+    console.log(userDetails)
     const options = {
       method: 'POST',
       body: JSON.stringify(userDetails),
-    };
+    }
 
     try {
-      const response = await fetch('https://apis.ccbp.in/login', options);
-      const data = await response.json();
+      const response = await fetch('https://apis.ccbp.in/login', options)
+      const data = await response.json()
       if (response.ok) {
-        const jwtToken = data.jwt_token;
-        console.log('Login: ', jwtToken);
-        Cookies.set('jwt_token', jwtToken, { expires: 20 });
-        navigate('/'); // Navigate to home
+        const jwtToken = data.jwt_token
+        console.log('Login: ', jwtToken)
+        Cookies.set('jwt_token', jwtToken, {expires: 20})
+        history('/', { replace: true }) // Navigate to home
       } else {
-        setErrorMsg(data.error_msg || 'Invalid login credentials');
+        setErrorMsg(data.error_msg || 'Invalid login credentials')
       }
     } catch (error) {
-      setErrorMsg('Something went wrong');
-      console.log(error);
+      setErrorMsg('Something went wrong')
+      console.log(error)
     }
-  };
-
+  }
   return (
     <Wrapper title="Login">
       <form className="form-container" onSubmit={OnSubmit}>
@@ -64,7 +63,7 @@ const LoginForm = () => {
         {errorMsg && <p className="error-message">{errorMsg}</p>}
       </form>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default LoginForm;
+export default LoginForm
